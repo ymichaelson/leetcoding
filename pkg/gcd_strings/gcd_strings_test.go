@@ -7,7 +7,7 @@ import (
 	"github.com/ymichaelson/klog"
 )
 
-func TestGcdStrings(t *testing.T) {
+func TestGcdOfStrings(t *testing.T) {
 	utils.InitKlog()
 
 	var testString1 = "ABCABCABC"

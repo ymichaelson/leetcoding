@@ -7,7 +7,7 @@ import (
 	"github.com/ymichaelson/klog"
 )
 
-func TestPermutePalindrome(t *testing.T) {
+func TestCanPermutePalindrome(t *testing.T) {
 	utils.InitKlog()
 
 	klog.Infoln("permute palindrome: ", CanPermutePalindrome("asdasd"))
