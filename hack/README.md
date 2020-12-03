@@ -1,8 +1,25 @@
 > 使用步骤
 
-- 配置config.json
+- 配置config.json文件到hack/config目录下
 - cd hack/cmd
 - 在hack/cmd目录下执行 $./generate
+
+> config
+```json
+{
+    "packageName": "",
+    "funcName": "",
+    "subject": {
+        "order": 0,
+        "name": "",
+        "topic": "",
+        "examples": [
+            "",
+            ""
+        ]
+    }
+}
+```
 
 > config详解
 ```
