@@ -8,4 +8,4 @@
 ```
 > 自动生成基础代码
 
-(自动生成基础代码)[https://github.com/ymichaelson/leetcoding/blob/master/hack/README.md]
+[自动生成基础代码](https://github.com/ymichaelson/leetcoding/blob/master/hack/README.md)
