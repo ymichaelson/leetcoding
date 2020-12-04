@@ -51,8 +51,8 @@ func Test{{.FuncName}}(t *testing.T) {
 		
 */
 
-func {{.FuncName}}() {
-	return
+func {{.FuncName}}({{.Args}}) {{.Result}} {
+	return {{.Return}}
 }
 `
 )

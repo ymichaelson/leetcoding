@@ -17,6 +17,9 @@ import (
 type TemplateConfig struct {
 	PackageName string  `json:"packageName"`
 	FuncName    string  `json:"funcName"`
+	Args        string  `json:"args"`
+	Result      string  `json:"result"`
+	Return      string  `json:"return"`
 	Subject     Subject `json:"subject"`
 }
 

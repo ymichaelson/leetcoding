@@ -9,6 +9,9 @@
 {
     "packageName": "",
     "funcName": "",
+    "args": "",
+    "result": "",
+    "return": "",
     "subject": {
         "order": 0,
         "name": "",
@@ -26,6 +29,9 @@
 {
     "packageName": "search",    文件夹名字以及包名
     "funcName": "Search",       函数名
+    "args": "s string",         函数传入参数
+    "result": "string",         函数返回结果
+    "return": "\"\"",           return的结果
     "subject": {
         "order": 1771,          题目序号
         "name": "二分查找",      题目标题
