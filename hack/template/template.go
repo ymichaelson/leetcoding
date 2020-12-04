@@ -2,7 +2,7 @@ package template
 
 const (
 	TestTemplate = `package {{.PackageName}}
-
+{{ $funcName := .FuncName }}
 import (
 	"leetcoding/utils"
 	"testing"
@@ -11,30 +11,24 @@ import (
 )
 
 var (
-	input1  = 
-	expect1 = 
-
-	input2  = 
-	expect2 = 
+	{{range $i, $v := .Subject.Examples}}
+	input{{add $i 1}} = 
+	expect{{add $i 1}} = 
+	{{end}}
 )
 
 func Test{{.FuncName}}(t *testing.T) {
 	utils.InitKlog()
 
-	output1 := {{.FuncName}}(input1)
-	if output1 != expect1 {
-		t.Errorf("test failed, expect %v, but got %v", expect1, output1)
+	{{range $i, $v := .Subject.Examples}}
+	output{{add $i 1}} := {{$funcName}}(input{{add $i 1}})
+	if output{{add $i 1}} != expect{{add $i 1}} {
+		t.Errorf("test failed, expect %v, but got %v", expect{{add $i 1}}, output{{add $i 1}})
 		return
 	}
+	klog.Infof("input: %v; expect: %v; output: %v", input{{add $i 1}}, expect{{add $i 1}}, output{{add $i 1}})
 
-	output2 := {{.FuncName}}(input2)
-	if output2 != expect2 {
-		t.Errorf("test failed, expect %v, but got %v", expect2, output2)
-		return
-	}
-
-	klog.Infof("input: %v; expect: %v; output: %v", input1, expect1, output1)
-	klog.Infof("input: %v; expect: %v; output: %v", input2, expect2, output2)
+	{{end}}
 }`
 
 	CodingTemplate = `package {{.PackageName}}

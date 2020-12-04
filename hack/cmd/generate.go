@@ -104,7 +104,11 @@ func main() {
 func testTemplate(temp *TemplateConfig) (string, error) {
 	var w bytes.Buffer
 
-	t := template.Must(template.New("test").Parse(templates.TestTemplate))
+	t := template.Must(template.New("test").Funcs(template.FuncMap{
+		"add": func(a, b int) int {
+			return a + b
+		},
+	}).Parse(templates.TestTemplate))
 	err := t.Execute(&w, temp)
 	if err != nil {
 		return "", err
