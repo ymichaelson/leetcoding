@@ -3,15 +3,21 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"os"
+	"path/filepath"
 	"text/template"
 
 	templates "leetcoding/hack/template"
 	"leetcoding/utils"
 
 	"github.com/ymichaelson/klog"
+)
+
+var (
+	configPath string
 )
 
 type TemplateConfig struct {
@@ -33,7 +39,19 @@ type Subject struct {
 func main() {
 	utils.InitKlog()
 
-	file, err := os.Open("../config/config.json")
+	// init path
+	path, err := filepath.Abs(filepath.Dir(os.Args[0]))
+	if err != nil {
+		klog.Error(err)
+		os.Exit(1)
+	}
+
+	configFilePath := fmt.Sprintf("%s/../config/config.json", path)
+	if len(configPath) > 0 {
+		configFilePath = configPath
+	}
+
+	file, err := os.Open(configFilePath)
 	if err != nil {
 		klog.Error(err)
 		os.Exit(1)
@@ -54,15 +72,17 @@ func main() {
 		os.Exit(1)
 	}
 
-	dir := fmt.Sprintf("../../pkg/%s", templateConfig.PackageName)
+	dirPath := fmt.Sprintf("%s/../../pkg/%s", path, templateConfig.PackageName)
+	codingFilePath := fmt.Sprintf("%s/%s.go", dirPath, templateConfig.PackageName)
+	testFilePath := fmt.Sprintf("%s/%s_test.go", dirPath, templateConfig.PackageName)
 
-	err = os.MkdirAll(dir, os.ModePerm)
+	err = os.MkdirAll(dirPath, os.ModePerm)
 	if err != nil {
 		klog.Error(err)
 		os.Exit(1)
 	}
 
-	codingFile, err := os.Create(fmt.Sprintf("%s/%s.go", dir, templateConfig.PackageName))
+	codingFile, err := os.Create(codingFilePath)
 	if err != nil {
 		klog.Error(err)
 		os.Exit(1)
@@ -70,7 +90,7 @@ func main() {
 
 	defer codingFile.Close()
 
-	testFile, err := os.Create(fmt.Sprintf("%s/%s_test.go", dir, templateConfig.PackageName))
+	testFile, err := os.Create(testFilePath)
 	if err != nil {
 		klog.Error(err)
 		os.Exit(1)
@@ -129,4 +149,8 @@ func codingTemplate(temp *TemplateConfig) (string, error) {
 		return "", err
 	}
 	return w.String(), nil
+}
+
+func init() {
+	flag.StringVar(&configPath, "config", "", "your config.json path")
 }

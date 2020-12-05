@@ -19,7 +19,6 @@ var (
 
 func Test{{.FuncName}}(t *testing.T) {
 	utils.InitKlog()
-
 	{{range $i, $v := .Subject.Examples}}
 	output{{add $i 1}} := {{$funcName}}(input{{add $i 1}})
 	if output{{add $i 1}} != expect{{add $i 1}} {
@@ -27,7 +26,6 @@ func Test{{.FuncName}}(t *testing.T) {
 		return
 	}
 	klog.Infof("input: %v; expect: %v; output: %v", input{{add $i 1}}, expect{{add $i 1}}, output{{add $i 1}})
-
 	{{end}}
 }`
 
