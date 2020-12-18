@@ -1,4 +1,4 @@
 github.com/go-logr/logr v0.3.0 h1:q4c+kbcR0d5rSurhBR8dIgieOaYpXtsdTYfx22Cu6rs=
 github.com/go-logr/logr v0.3.0/go.mod h1:z6/tIYblkpsD+a4lm/fGIIU9mZ+XfAiaFtq7xTgseGU=
-github.com/ymichaelson/klog v1.0.0 h1:RodTykOEvJVRHPSydUtZlRIQURZdDyuZnyubKqQESAI=
-github.com/ymichaelson/klog v1.0.0/go.mod h1:U0QHQ3Zbm1FTkTG4KVCFkCuoH4arieODxhoEKKqhT6o=
+github.com/hex-techs/klog v1.0.0 h1:drkB7LFaEFtklHKet4dezo2vqHUT7xpqZ+r+E4jDPxU=
+github.com/hex-techs/klog v1.0.0/go.mod h1:EZf3NgH8Onjb+UujdYloNOCpgidvm4Fc9iY8c7pgCsg=

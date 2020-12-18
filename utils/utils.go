@@ -3,7 +3,7 @@ package utils
 import (
 	"flag"
 
-	"github.com/ymichaelson/klog"
+	"github.com/hex-techs/klog"
 )
 
 func InitKlog() {

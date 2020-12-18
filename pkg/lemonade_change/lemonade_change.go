@@ -1,6 +1,6 @@
 package lemonade_change
 
-import "github.com/ymichaelson/klog"
+import "github.com/hex-techs/klog"
 
 /*
 860.柠檬水找零

@@ -13,7 +13,7 @@ import (
 	templates "leetcoding/hack/template"
 	"leetcoding/utils"
 
-	"github.com/ymichaelson/klog"
+	"github.com/hex-techs/klog"
 )
 
 var (

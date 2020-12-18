@@ -1,6 +1,6 @@
 package single_numbers
 
-import "github.com/ymichaelson/klog"
+import "github.com/hex-techs/klog"
 
 /*
 56. 剑指 Offer 56 - I. 数组中数字出现的次数

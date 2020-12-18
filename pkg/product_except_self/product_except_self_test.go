@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ymichaelson/klog"
+	"github.com/hex-techs/klog"
 )
 
 var (

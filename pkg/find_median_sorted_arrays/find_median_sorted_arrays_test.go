@@ -4,7 +4,7 @@ import (
 	"leetcoding/utils"
 	"testing"
 
-	"github.com/ymichaelson/klog"
+	"github.com/hex-techs/klog"
 )
 
 var (
